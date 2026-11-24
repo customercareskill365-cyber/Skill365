@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill 365 – Home</title>
+    <meta name="description" content="Skill 365 LMS: Recorded video courses, live session recordings, digital products, certificates, newsletters, and role-based profiles." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Skill 365 logo" />
+                <span class="logo-text">Skill <strong>365</strong></span>
+            </a>
+            <nav class="nav" id="mainNav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="live-sessions.html">Live Recordings</a></li>
+                    <li><a href="digital-products.html">Digital Products</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="role-switcher">
+                    <label for="roleSelect" class="sr-only">Active Role</label>
+                    <select id="roleSelect" aria-label="Switch user role">
+                        <option value="student">Student View</option>
+                        <option value="instructor">Instructor View</option>
+                        <option value="admin">Admin View</option>
+                    </select>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Master Practical Skills, Every Day of the Year.</h1>
+                <p>Recorded video courses, live workshop recordings, digital toolkits, and verified certificate programs—organized into clean, focused spaces.</p>
+                <div class="hero-cta-group">
+                    <a href="courses.html" class="btn btn-teal">Explore Courses</a>
+                    <a href="live-sessions.html" class="btn btn-outline-light">Live Recordings</a>
+                    <a href="digital-products.html" class="btn btn-outline-light">Digital Store</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <span class="badge badge-teal">Continue Learning</span>
+                    <span class="progress-label">68% Complete</span>
+                </div>
+                <h3>Full-Stack Web Architecture</h3>
+                <p>Module 4: Designing Scalable REST APIs &amp; Auth Flows</p>
+                <div class="progress-bar"><div class="progress-fill" style="width: 68%;"></div></div>
+                <button class="btn btn-primary btn-full" onclick="openVideoModal('Full-Stack Web Architecture', 'Module 4: Designing Scalable REST APIs & Auth Flows', '34:15')">
+                    &#9654; Resume Lesson
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section section-white">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Featured Recorded Courses</h2>
+                        <p class="section-subtitle">Start learning with our most popular self-paced programs.</p>
+                    </div>
+                    <a href="courses.html" class="btn btn-secondary">View All Courses &rarr;</a>
+                </div>
+                <div class="grid-3" id="homeFeaturedGrid"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Explore Skill 365</h2>
+                        <p class="section-subtitle">Dedicated pages for every part of your learning journey.</p>
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="badge badge-blue" style="align-self:flex-start; margin-bottom:0.75rem;">Live &amp; Replays</span>
+                            <h3 class="card-title">Live Session Recordings</h3>
+                            <p class="card-desc">Reserve seats for upcoming workshops or replay past live sessions on demand.</p>
+                            <div class="card-footer">
+                                <a href="live-sessions.html" class="btn btn-primary btn-sm btn-full">Open Live Sessions &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="badge badge-teal" style="align-self:flex-start; margin-bottom:0.75rem;">Razorpay Ready</span>
+                            <h3 class="card-title">Digital Products Store</h3>
+                            <p class="card-desc">Download e-books, UI kits, and starter code templates with instant access.</p>
+                            <div class="card-footer">
+                                <a href="digital-products.html" class="btn btn-primary btn-sm btn-full">Browse Digital Store &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="badge badge-slate" style="align-self:flex-start; margin-bottom:0.75rem;">3 Roles</span>
+                            <h3 class="card-title">Your Profile &amp; Certificates</h3>
+                            <p class="card-desc">Manage Student progress, Instructor course uploads, or Admin settings.</p>
+                            <div class="card-footer">
+                                <a href="profile.html" class="btn btn-primary btn-sm btn-full">Go to Profile &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Skill 365" />
+                <span>Skill 365 LMS</span>
+            </div>
+            <p>&copy; 2026 Skill 365. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Video Player Modal -->
+    <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+        <div class="modal-card modal-lg">
+            <div class="modal-header">
+                <div>
+                    <h3 id="videoModalTitle">Course Video</h3>
+                    <p id="videoModalSubtitle" class="modal-sub"></p>
+                </div>
+                <button class="modal-close" onclick="closeModal('videoModal')" aria-label="Close">&times;</button>
+            </div>
+            <div class="video-player-sim">
+                <div class="video-screen">
+                    <div class="play-pulse">&#9654;</div>
+                    <p>Playing HD Stream &bull; <span id="videoDuration">18:40</span></p>
+                </div>
+                <div class="video-controls-bar">
+                    <span>04:12 / <span id="videoDurationEnd">18:40</span></span>
+                    <div class="video-progress"><div class="video-progress-fill"></div></div>
+                    <span class="badge badge-teal">1080p HD</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-teal" onclick="markLessonComplete()">Mark Lesson Complete</button>
+                <button class="btn btn-secondary" onclick="closeModal('videoModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+</body>
+</html>

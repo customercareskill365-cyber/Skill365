@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill 365 – Recorded Courses &amp; Certificates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Skill 365 logo" />
+                <span class="logo-text">Skill <strong>365</strong></span>
+            </a>
+            <nav class="nav" id="mainNav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="live-sessions.html">Live Recordings</a></li>
+                    <li><a href="digital-products.html">Digital Products</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="role-switcher">
+                    <select id="roleSelect" aria-label="Switch user role">
+                        <option value="student">Student View</option>
+                        <option value="instructor">Instructor View</option>
+                        <option value="admin">Admin View</option>
+                    </select>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Recorded Video Courses</h1>
+            <p>Self-paced HD video lessons with chapter markers, progress tracking, and verified certificates.</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Course Catalog</h2>
+                    <div class="filter-tabs" id="courseFilters" role="tablist">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="Development">Development</button>
+                        <button class="filter-btn" data-category="Design">Design</button>
+                        <button class="filter-btn" data-category="Data & AI">Data &amp; AI</button>
+                        <button class="filter-btn" data-category="Business">Business</button>
+                    </div>
+                </div>
+                <div class="grid-3" id="coursesGrid"></div>
+            </div>
+        </section>
+
+        <section class="section section-white">
+            <div class="container cert-layout">
+                <div>
+                    <span class="badge badge-teal" style="margin-bottom:0.6rem;">Certificate Program</span>
+                    <h2>Verified Skill 365 Certificates</h2>
+                    <p class="section-subtitle" style="margin:0.75rem 0 1.25rem;">Complete any recorded course track to unlock a verifiable Skill 365 Certificate of Completion ready for LinkedIn and resumes.</p>
+                    <button class="btn btn-primary" onclick="downloadCertificate()">Download Sample Certificate (PDF / Print)</button>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-border">
+                        <img src="assets/logo.png" alt="Skill 365" class="cert-logo" />
+                        <span class="cert-kicker">CERTIFICATE OF COMPLETION</span>
+                        <h3>Aarav Sharma</h3>
+                        <p>has successfully completed the program</p>
+                        <h4>Full-Stack Web Architecture</h4>
+                        <div class="cert-footer">
+                            <div><small>Issue Date</small><strong>Nov 24, 2026</strong></div>
+                            <div><small>Certificate ID</small><strong>S365-2026-8841</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand"><img src="assets/logo.png" alt="Skill 365" /><span>Skill 365 LMS</span></div>
+            <p>&copy; 2026 Skill 365. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+        <div class="modal-card modal-lg">
+            <div class="modal-header">
+                <div><h3 id="videoModalTitle">Course Video</h3><p id="videoModalSubtitle" class="modal-sub"></p></div>
+                <button class="modal-close" onclick="closeModal('videoModal')" aria-label="Close">&times;</button>
+            </div>
+            <div class="video-player-sim">
+                <div class="video-screen"><div class="play-pulse">&#9654;</div><p>Playing HD Stream &bull; <span id="videoDuration">18:40</span></p></div>
+                <div class="video-controls-bar"><span>04:12 / <span id="videoDurationEnd">18:40</span></span><div class="video-progress"><div class="video-progress-fill"></div></div><span class="badge badge-teal">1080p HD</span></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-teal" onclick="markLessonComplete()">Mark Lesson Complete</button>
+                <button class="btn btn-secondary" onclick="closeModal('videoModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+</body>
+</html>

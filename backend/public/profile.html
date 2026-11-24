@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill 365 – Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Skill 365 logo" />
+                <span class="logo-text">Skill <strong>365</strong></span>
+            </a>
+            <nav class="nav" id="mainNav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="live-sessions.html">Live Recordings</a></li>
+                    <li><a href="digital-products.html">Digital Products</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="role-switcher">
+                    <select id="roleSelect" aria-label="Switch user role">
+                        <option value="student">Student View</option>
+                        <option value="instructor">Instructor View</option>
+                        <option value="admin">Admin View</option>
+                    </select>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Account &amp; Role Profile</h1>
+            <p>Switch between Student, Instructor, and Admin profiles.</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Role Dashboard</h2>
+                    <div class="filter-tabs" id="profileRoleTabs">
+                        <button class="filter-btn active" data-role="student">Student</button>
+                        <button class="filter-btn" data-role="instructor">Instructor</button>
+                        <button class="filter-btn" data-role="admin">Admin</button>
+                    </div>
+                </div>
+                <div id="profileContent" class="profile-panel"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand"><img src="assets/logo.png" alt="Skill 365" /><span>Skill 365 LMS</span></div>
+            <p>&copy; 2026 Skill 365. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+        <div class="modal-card modal-lg">
+            <div class="modal-header">
+                <div><h3 id="videoModalTitle">Course Video</h3><p id="videoModalSubtitle" class="modal-sub"></p></div>
+                <button class="modal-close" onclick="closeModal('videoModal')" aria-label="Close">&times;</button>
+            </div>
+            <div class="video-player-sim">
+                <div class="video-screen"><div class="play-pulse">&#9654;</div><p>Playing HD Stream &bull; <span id="videoDuration">18:40</span></p></div>
+                <div class="video-controls-bar"><span>04:12 / <span id="videoDurationEnd">18:40</span></span><div class="video-progress"><div class="video-progress-fill"></div></div><span class="badge badge-teal">1080p HD</span></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-teal" onclick="markLessonComplete()">Mark Lesson Complete</button>
+                <button class="btn btn-secondary" onclick="closeModal('videoModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+</body>
+</html>
